@@ -39,10 +39,10 @@ app.post("/", function(req, res){
   }
   //  In order to send the data, we need to first make it JSON type...
   const jsonData = JSON.stringify(newData);
-  const url = "https://us6.api.mailchimp.com/3.0/lists/34317ee2e3";
+  const url = "https://us6.api.mailchimp.com/3.0/lists/<list-number>";
   const options = {
     method: "POST",
-    auth: 'camperjett:4e9d5b22f8d80b9e8360aaf67f75241b-us6'
+    auth: '<username>:<api-key>'
   };
 
   const requestForSubs = https.request(url, options, function(response){
@@ -64,7 +64,3 @@ app.post("/", function(req, res){
 app.post("/failure", function(reqf, resf){
   resf.redirect("/");
 })
-//  mail chimp api key
-//  4e9d5b22f8d80b9e8360aaf67f75241b-us6
-//  list id
-//  34317ee2e3
